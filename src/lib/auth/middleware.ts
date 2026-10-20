@@ -1,3 +1,10 @@
+import util from 'util';
+
+if (!util.TextEncoder) {
+  util.TextEncoder = globalThis.TextEncoder;
+  util.TextDecoder = globalThis.TextDecoder;
+}
+
 import { createMiddleware } from "@tanstack/react-start";
 
 /**

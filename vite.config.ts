@@ -184,9 +184,12 @@ export default defineConfig(({ command, isPreview }) => ({
             // Keep Anchor as a runtime dependency instead of rewriting its
             // CommonJS entry into an ESM .mjs chunk (exports is undefined in ESM).
             externals: {
-              external: ["@coral-xyz/anchor"],
-            },
-          }),
+  external: ["@coral-xyz/anchor"],
+},
+rollupConfig: {
+  external: ["@coral-xyz/anchor"],
+},
+}),
         ]
       : []),
     viteReact(),
